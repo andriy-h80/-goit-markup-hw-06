@@ -314,6 +314,7 @@
     <!-- Підвал сторінки -->
     <footer class="footer">
         <div class="container">
+        <!-- Контакти футера -->
         <div class="footer-contacts">
         <div>
             <h4 class="footer-logo"><span class="web">Web</span><span class="studio-footer">Studio</span></h4>
@@ -326,7 +327,7 @@
             <a href="tel:+380961111111" class="footer-tel">+38 096 111 11 11</a>
         </address>
         </div>  
-
+        <!-- Соцмережі футера -->
             <div class="block">
             <span class="text">ПРИЄДНУЙТЕСЬ</span>        
             <ul class="social-icons block-icons">
@@ -356,19 +357,25 @@
                 </li>
             </ul>
             </div>
-            
+        <!-- Підписка -->
             <div class="footer-form">
                 <span class="text">ПІДПИШІТЬСЯ НА РОЗСИЛКУ</span>
                         
-            <div class="subscribe-field">
-                <label class="subscribe-label" for="subscribe-email"></label>
-                <input class="subscribe-input" type="email" name="subscribe-email" id="subscribe-email" placeholder="E-mail" />
-            </div>
+                <div class="subscribe-field">
+                    <div><label class="subscribe-label" for="subscribe-email"></label>
+                    <input class="subscribe-input" type="email" name="subscribe-email" id="subscribe-email" placeholder="E-mail" />
+                    </div>
 
-            <button type="submit" class="subscribe-button">Підписатися</button>
+                    <div>
+                    <button type="submit" class="subscribe-button">Підписатися
+                    <svg class="icon-subscribe">
+                        <use href="./images/icons.svg#icon-send"></use>
+                    </svg>
+                    </button>
+                    </div>
+                </div>
             </div>
-
-            </div>
+        </div>
         </div> 
     </footer>
 
@@ -376,24 +383,38 @@
         <div class="modal">
             <form class="form">
                 <span class="form-title">Залиште свої дані, ми вам передзвонимо</span>
+                <!-- Позиціонування іконок в input -->
                     <div class="form-field">
-                        <label class="form-label" for="user-name">Ім’я</label>
+                        <label class="form-label" for="user-name">Ім’я</label>                    
                         <input class="form-input" type="text" name="user-name" id="user-name" />
+                            <svg class="icon-modal">
+                                <use href="./images/icons.svg#icon-person-black-18dp"></use>
+                            </svg>
                     </div>
                     <div class="form-field">
                         <label class="form-label" for="user-tel">Телефон</label>
                         <input class="form-input" type="tel" name="user-tel" id="user-tel" />
+                            <svg class="icon-modal">
+                                <use href="./images/icons.svg#icon-phone-black-18dp"></use>
+                            </svg>
                     </div>
                     <div class="form-field">
                         <label class="form-label" for="user-email">Пошта</label>
                         <input class="form-input" type="email" name="user-email" id="user-email" />
+                            <svg class="icon-modal">
+                                <use href="./images/icons.svg#icon-email-black-18dp"></use>
+                            </svg>
                     </div>
                     <div class="form-field">
                         <label class="form-label" for="comment">Коментар</label>
                         <textarea name="comment" id="comment" rows="10" placeholder="Введіть текст" class="comment"></textarea>
                     </div>
-                    <div>
-                        <input type="checkbox" name="terms" value="terms" id="terms"/>
+                <!-- оформлення чекбоксу -->
+                    <div class="checkbox">
+                        <input class="checkbox-input" type="checkbox" name="terms" value="terms" id="terms" />
+                        <svg class="checkbox-terms">
+                            <use href="./images/icons.svg#icon-checkbox"></use>
+                        </svg>
                         <label for="terms" class="terms">Погоджуюся з розсилкою та приймаю <a href="" class="contract">Умови договору</a></label>
                     </div>
                 
@@ -402,7 +423,11 @@
                 
             </form>
             <!-- <p></p> -->
-            <button class="close" data-modal-close></button>
+            <button class="close-button" data-modal-close>
+                <svg class="close">
+                    <use href="./images/icons.svg#icon-close-x"></use>
+                </svg>
+            </button>
         </div>
     </div>
 

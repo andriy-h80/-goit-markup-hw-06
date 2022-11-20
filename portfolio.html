@@ -224,6 +224,7 @@
     <!-- Підвал сторінки -->
     <footer class="footer">
         <div class="container">
+        <!-- Контакти футера -->    
         <div class="footer-contacts">
         <div>
             <h4 class="footer-logo"><span class="web">Web</span><span class="studio-footer">Studio</span></h4>
@@ -236,7 +237,7 @@
             <a href="tel:+380961111111" class="footer-tel">+38 096 111 11 11</a>
         </address>
         </div>    
-
+        <!-- Соцмережі футера -->
             <div class="block">
             <span class="text">ПРИЄДНУЙТЕСЬ</span>        
             <ul class="social-icons block-icons">
@@ -266,7 +267,25 @@
                 </li>
             </ul>
             </div>
-            </div>
+        <!-- Підписка -->
+            <div class="footer-form">
+                <span class="text">ПІДПИШІТЬСЯ НА РОЗСИЛКУ</span>
+                    
+                <div class="subscribe-field">
+                    <div><label class="subscribe-label" for="subscribe-email"></label>
+                    <input class="subscribe-input" type="email" name="subscribe-email" id="subscribe-email" placeholder="E-mail" />
+                    </div>
+
+                    <div>
+                    <button type="submit" class="subscribe-button">Підписатися
+                    <svg class="icon-subscribe">
+                        <use href="./images/icons.svg#icon-send"></use>
+                    </svg>
+                    </button>
+                    </div>
+                </div>
+            </div>    
+        </div>
         </div> 
     </footer>
 </body>

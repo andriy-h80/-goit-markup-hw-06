@@ -449,7 +449,6 @@ li {
 
   min-width: 528px;
   min-height: 581px;
-  padding: 8px 8px ;
   background-color: var(--white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;;
@@ -461,14 +460,20 @@ li {
   right: 8px;
   width: 30px;
   height: 30px;
-  background-color: var(--white-color);
+  fill: var(--white-color);
+  background-color: var(--white-color); 
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
-  background-image: url(../images/Close-X.svg);
-  padding: 6px;
+  /* background-image: url(../images/Close-X.svg); */
+  /* padding: 6px; */
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
+}
+
+.close:hover{
+  fill: var(--hover-color);
+  background-color: var(--white-color);
 }
 
 .action{
@@ -505,18 +510,35 @@ list-style: none;
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+  position: relative;
 }
 
-.form-field input{
+/* .form-field input{
   margin: 0;
   padding: 0;
-}
+} */
 
 .form-input{
   width: 448px;
   height: 40px;
+  padding: 0 0 0 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+}
+
+
+
+.form-input:hover,
+.form-input:focus{
+  border-color: var(--hover-color);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input:hover + .icon-modal{
+  fill: var(--hover-color);
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-label{
@@ -529,6 +551,42 @@ list-style: none;
   color: var(--text-color);
 }
 
+.icon-modal{
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  left: 12px;
+}
+
+.block-modal{}
+
+.checkbox{
+  position: relative;
+}
+
+.checkbox-input{
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.checkbox-terms{
+  position: absolute;
+  width: 16px;
+  height: 15px;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.checkbox-input:checked + .checkbox-terms{
+  background-image: url(/images/icon-check.svg);
+  background-color: var(--hover-color);
+  fill: var(--hover-color);
+  background-size: contain;
+  border-color: transparent;
+  /* background-origin: border-box; */
+}
 
 textarea{
   resize: none;
@@ -566,6 +624,7 @@ textarea{
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+  padding-left: 36.38px;
 }
 
 .contract{
@@ -574,7 +633,7 @@ textarea{
 }
 
 .contract::before{
-  content: "";
+  content: " ";
   display: block;
   width: 100%;
   height: 1px;
@@ -602,6 +661,7 @@ textarea{
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border-color: transparent;
+  cursor: pointer;
 }
 
 /* Іконки переваг */
@@ -742,6 +802,8 @@ textarea{
 .social-link:focus{
   background-color: var(--hover-color);
   /* fill: var(--white-color); */
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-team:hover,
@@ -785,6 +847,8 @@ textarea{
 .clients-name:hover,
 .clients-name:focus{
   border: 1px solid #2196f3;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-link{
@@ -981,17 +1045,49 @@ margin-bottom: 30px;
   padding-top: 10px;
 }
 
+.subscribe-field{
+  display: flex;
+  margin-top: 20px;
+}
+
+/* .sudscribe-label{
+ 
+} */
+
 .subscribe-input{
-  /* padding-top: 20px; */
+  width: 358px;
+  height: 50px;
+  padding-left: 16px;
+    
   border: 1px solid rgba(255, 255, 255, 0.3);
-  /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15)); */
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
+  background-color: transparent;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.icon-subscribe{
+  width: 24px;
+  height: 24px;
+  fill: var(--white-color);
+  position: absolute;
+  right: 28px;
 }
 
 .subscribe-button{
   margin: auto;
-  /* margin-top: 30px; */
+  margin-left: 12px;
   padding: 10px 28px;
+  width: 200px;
+  height: 50px;
+  position: relative;
 
   font-style: normal;
   font-weight: 700;
@@ -1006,10 +1102,7 @@ margin-bottom: 30px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border-color: transparent;
-}
-
-.subscribe-button::after{
-  
+  cursor: pointer;
 }
 
 /* Іконки футера */
